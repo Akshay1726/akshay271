@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay's Blog</title>
+    <style>
+        /* Reset some default browser styles */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            color: black;
+            justify-content: space-around;
+            padding: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+            color: black;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            flex-shrink: 0;
+        }
+
+        header nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            overflow-x: auto;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+            flex-shrink: 0;
+        }
+
+        header nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container layout */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        /* Main content styling */
+        main {
+            flex: 3;
+            margin-right: 20px;
+        }
+
+        main article, .contact-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        main article:hover, .contact-container:hover {
+            transform: translateY(-5px);
+        }
+
+        main article img {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        main article .meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        main article .read-more {
+            background-color: #a1c4fd;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        main article .read-more:hover {
+            background-color: #c2e9fb;
+        }
+
+        /* Sidebar styling */
+        aside {
+            flex: 1;
+        }
+
+        aside section {
+            background-color: #e0f7fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        aside section h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        aside section ul {
+            list-style-type: none;
+        }
+
+        aside section ul li {
+            margin-bottom: 10px;
+        }
+
+        aside section ul li a {
+            color: #00796b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        aside section ul li a:hover {
+            text-decoration: underline;
+        }
+        .contact-container {
+            max-width: 850px;
+            margin: 40px auto;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-container p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styling */
+        footer {
+            background: linear-gradient(45deg, #c2e9fb, #a1c4fd);
+            color: blue;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        footer .social-media a {
+            color: black;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        footer .social-media a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            main {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            header nav ul {
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Akshay's Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://akshay1726.github.io/akshay/">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <article>
+                <h2>Vignan UEAC</h2>
+                <p class="meta">by <strong>Akshay</strong> on August 15, 2023</p>
+                <img src="vignanueac.png" alt="Blog image">
+                <p>The UEAC Unit of VFSTR was established in the year 2009 to motivate students towards community-oriented service. These activities are aimed at instilling social consciousness and responsibility among budding engineers. They also enable VFSTR to forge strong links with the community and help in its development through various extension activities. The unit also encourages community involvement in the college's growth and development.</p>
+            </article>
+
+            <!-- Contact Section -->
+            <div id="contact" class="contact-container">
+                <h2>Contact Me</h2>
+                <p><strong>Phone:</strong> 9110704986</p>
+                <p><strong>Email:</strong> <a href="mailto:mohankannuri231@gmail.com">mohankannuri231@gmail.com</a></p>
+            </div>
+        </main>
+
+        <aside>
+            <section>
+                <h3>UEAC Current Affairs</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/p/C-rxlOYByjj/?hl=en">President</a></li>
+                    <li><a href="https://www.instagram.com/p/C-RavWeqdbH/?hl=en">Recruiting Core</a></li>
+                    <li><a href="https://www.instagram.com/p/C-Ra7HnKx9h/?hl=en">Recruiting</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>UEAC Activities</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/p/C-DqdQchSDG/?hl=en">Orphanage Visiting</a></li>
+                    <li><a href="https://www.instagram.com/p/C-ALn4fqUvp/?hl=en">School Visiting</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; Akshay Blog, All rights reserved by Akshay Kannuri.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://x.com/home">Twitter</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Optional: Smooth scrolling for the contact link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
